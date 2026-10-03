@@ -8,6 +8,7 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* bỏ qua */ } },
 };
 const prod = (id) => PRODUCTS.find((p) => p.id === id);
+const pic = (p) => (p.img ? `<img src="${p.img}" alt="${esc(p.name)}" loading="lazy">` : Art.render(p.art));
 const rid = () => Math.random().toString(36).slice(2, 9);
 
 /* ---------- State ---------- */
@@ -41,7 +42,7 @@ function nextTier(u) { return TIERS.find((t) => t.min > u.lifetime); }
 /* ---------- Render thực đơn ---------- */
 function productCard(p) {
   return `<article class="card product ${p.cat}" data-id="${p.id}">
-    <div class="p-img">${p.tag ? `<span class="tag">${esc(p.tag)}</span>` : ''}${Art.render(p.art)}</div>
+    <div class="p-img ${p.img ? 'photo' : ''}">${p.tag ? `<span class="tag">${esc(p.tag)}</span>` : ''}${pic(p)}</div>
     <div class="p-body">
       <h3>${esc(p.name)}</h3>
       <div class="flavor">${esc(p.flavor)}</div>
@@ -71,7 +72,7 @@ function openOrder(id, showStory = false) {
   const p = prod(id), tops = TOPPINGS[p.cat];
   const isDrink = p.cat === 'drink';
   openModal(`<form id="orderForm" class="${p.cat}">
-    <div class="m-top"><div class="m-img">${Art.render(p.art)}</div>
+    <div class="m-top"><div class="m-img ${p.img ? 'photo' : ''}">${pic(p)}</div>
       <div><h3>${esc(p.name)}</h3><div class="flavor">${esc(p.flavor)}</div><div class="price">${fmt(p.price)}</div></div></div>
     <p class="m-story">${esc(p.story)}</p>
     ${isDrink ? `
@@ -156,7 +157,7 @@ function suggestions() {
   const topSug = cart.some((l) => prod(l.id).cat === 'drink' && !l.tops.length) ? '<div class="hint">💡 Thức uống chưa có topping — thử thêm trân châu hoặc kem cheese cho đã nhé!</div>' : '';
   if (!pool.length && !topSug) return '';
   return `<div class="suggest"><h5>Hải Chi gợi ý ăn kèm</h5>
-    <div class="sug-row">${pool.map((id) => { const p = prod(id); return `<button class="sug" data-sug="${id}">${Art.render(p.art)}<span>${esc(p.name)} · ${fmt(p.price)}</span></button>`; }).join('')}</div>${topSug}</div>`;
+    <div class="sug-row">${pool.map((id) => { const p = prod(id); return `<button class="sug" data-sug="${id}">${pic(p)}<span>${esc(p.name)} · ${fmt(p.price)}</span></button>`; }).join('')}</div>${topSug}</div>`;
 }
 
 function renderCart() {
@@ -171,7 +172,7 @@ function renderCart() {
     const p = prod(l.id);
     const meta = [...Object.values(l.opts), ...l.tops.map((t) => '+ ' + TOPPINGS[p.cat].find((x) => x.id === t).name)].join(' · ');
     return `<div class="line ${p.cat}" data-uid="${l.uid}">
-      <div class="thumb">${Art.render(p.art)}</div>
+      <div class="thumb ${p.img ? 'photo' : ''}">${pic(p)}</div>
       <div><h4>${esc(p.name)}</h4>${meta ? `<div class="meta">${esc(meta)}</div>` : ''}
         <input class="note" data-note placeholder="Ghi chú cho món này…" maxlength="200" value="${esc(l.note)}"></div>
       <div class="line-right"><span class="price">${fmt(unit(l) * l.qty)}</span>
