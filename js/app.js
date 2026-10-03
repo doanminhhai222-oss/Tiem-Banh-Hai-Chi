@@ -55,9 +55,6 @@ function productCard(p) {
 function renderMenu() {
   $('#gridBanh').innerHTML = PRODUCTS.filter((p) => p.cat === 'banh').map(productCard).join('');
   $('#gridDrink').innerHTML = PRODUCTS.filter((p) => p.cat === 'drink').map(productCard).join('');
-  $('#heroArt1').innerHTML = Art.render(prod('macaron').art);
-  $('#heroArt2').innerHTML = Art.render(prod('sukem').art);
-  $('#heroArt3').innerHTML = Art.render(prod('cheesecake').art);
   const sel = $('#reviewForm select[name=item]');
   PRODUCTS.forEach((p) => sel.insertAdjacentHTML('beforeend', `<option>${esc(p.name)}</option>`));
 }
