@@ -106,7 +106,7 @@ const PRODUCTS = [
     art: { k: 'cup', layers: [['#ffae5b', .65]], foam: null, fruit: '#ffc78a', straw: '#8fb9a0' },
     flavor: 'Thơm sả · ngọt đào · chua nhẹ cam',
     story: 'Món trà trái cây quốc dân của quán Việt: trà đen ủ lạnh, miếng đào ngâm giòn ngọt, vài lát cam vàng và sả đập dập. Thơm nức, uống một ngụm là tỉnh người.' },
-  { id: 'hongtra', cat: 'drink', name: 'Hồng trà macchiato', price: 45000,
+  { id: 'hongtra', cat: 'drink', img: 'assets/menu/hongtra.jpg', name: 'Hồng trà macchiato', price: 45000,
     art: { k: 'cup', layers: [['#b9642e', .55], ['#fff0d6', .28]], foam: '#fff0d6', straw: '#e4a39b' },
     flavor: 'Trà đậm · kem cheese mặn béo',
     story: '“Macchiato” trong tiếng Ý là “điểm vết” — như lớp kem phô mai đánh bông điểm trên bề mặt trà. Hồng trà đậm vị cân bằng độ béo của kem, uống từng ngụm lớn mới đã.' },
