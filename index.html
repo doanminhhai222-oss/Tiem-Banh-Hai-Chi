@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hải Chi Bakery · Tiệm bánh ngọt ngào ấm cúng</title>
+<meta name="description" content="Hải Chi Bakery – tiệm bánh ngọt và thức uống ấm cúng. Đặt bánh, cà phê, trà sữa online, tích điểm đổi quà, ưu đãi khách VIP.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav" id="top">
+  <a class="brand" href="#top"><span class="brand-logo" aria-hidden="true">🧁</span><span>Hải Chi <em>Bakery</em></span></a>
+  <button class="burger" id="burger" aria-label="Mở menu" aria-expanded="false">☰</button>
+  <nav id="menu">
+    <a href="#gioi-thieu">Giới thiệu</a>
+    <a href="#banh">Bánh ngọt</a>
+    <a href="#thuc-uong">Thức uống</a>
+    <a href="#tich-diem">Tích điểm</a>
+    <a href="#vip">Khách VIP</a>
+    <a href="#danh-gia">Đánh giá</a>
+    <a href="#hoi-dap">Hỏi đáp</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="btn ghost small" id="btnAccount">Đăng nhập</button>
+    <button class="cart-btn" id="btnCart" aria-label="Giỏ hàng">🛍️<span class="badge" id="cartCount">0</span></button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero terrazzo">
+    <div class="hero-text">
+      <p class="eyebrow">Since 2019 · Made with love</p>
+      <h1>Ngọt ngào <span class="script">từng lát bánh</span>,<br>ấm áp từng ly nước</h1>
+      <p>Hải Chi Bakery là góc nhỏ màu hồng – xanh mint, nơi mùi bơ nướng quyện cùng hương cà phê rang. Ghé tiệm, chọn một chiếc bánh, và để hôm nay dịu dàng hơn một chút.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#banh">Đặt bánh ngay</a>
+        <a class="btn ghost" href="#thuc-uong">Xem thức uống</a>
+      </div>
+      <ul class="hero-badges">
+        <li>🥐 Nướng mới mỗi sáng</li><li>🎁 Tích điểm – tặng bánh</li><li>🚚 Giao nội thành 30′</li>
+      </ul>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="arch arch-main"><div class="neon">Hải Chi<br><small>Bakery</small></div>
+        <div class="shelf">
+          <span id="heroArt1"></span><span id="heroArt2"></span><span id="heroArt3"></span>
+        </div>
+      </div>
+      <div class="arch arch-side"></div>
+    </div>
+  </section>
+
+  <!-- GIỚI THIỆU -->
+  <section class="section about" id="gioi-thieu">
+    <div class="about-grid">
+      <div class="about-card arch-top">
+        <div class="about-art" id="aboutArt"></div>
+        <p class="sign script">— Chi, chủ tiệm</p>
+      </div>
+      <div class="about-text">
+        <p class="eyebrow">Câu chuyện của Hải Chi</p>
+        <h2>Từ căn bếp nhỏ đến giấc mơ tiệm bánh màu hồng</h2>
+        <p>Hồi nhỏ, mỗi chiều cuối tuần Chi đứng cạnh mẹ trong bếp, nhón vụng một ít kem trứng còn nóng. Mùi vani, mùi bơ chảy và tiếng lò nướng “ting” là thứ âm thanh hạnh phúc nhất tuổi thơ.</p>
+        <p>Lớn lên, Chi bỏ công việc văn phòng để học làm bánh — từ chiếc su kem đầu tiên xẹp lép đến những mẻ macaron đẹp như tranh. Giấc mơ của Chi rất giản dị: <strong>một tiệm bánh ấm cúng, nơi ai bước vào cũng được ôm bằng mùi bơ thơm và nụ cười</strong>.</p>
+        <p>Mỗi chiếc bánh ở Hải Chi đều nướng trong ngày, dùng bơ thật, trứng sạch, trái cây theo mùa — không phẩm màu độc hại, không chất bảo quản. Vì với Chi, ngọt thật sự là ngọt đến từ sự chăm chút.</p>
+        <div class="stats">
+          <div><b>12+</b><span>loại bánh</span></div>
+          <div><b>10</b><span>thức uống hot</span></div>
+          <div><b>5.000+</b><span>khách thân thiết</span></div>
+          <div><b>100%</b><span>nướng trong ngày</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BÁNH -->
+  <section class="section mint" id="banh">
+    <div class="section-head">
+      <p class="eyebrow">Tủ bánh Hải Chi</p>
+      <h2>Bánh ngọt nướng mỗi ngày</h2>
+      <p class="sub">Chạm vào từng chiếc bánh để nghe câu chuyện và hương vị của nó.</p>
+    </div>
+    <div class="grid" id="gridBanh"></div>
+  </section>
+
+  <!-- THỨC UỐNG -->
+  <section class="section" id="thuc-uong">
+    <div class="section-head">
+      <p class="eyebrow">Quầy pha chế</p>
+      <h2>Cà phê &amp; trà sữa giới trẻ mê</h2>
+      <p class="sub">Tùy chọn đường, đá và topping theo gu của bạn.</p>
+    </div>
+    <div class="grid" id="gridDrink"></div>
+  </section>
+
+  <!-- TÍCH ĐIỂM -->
+  <section class="section pink terrazzo" id="tich-diem">
+    <div class="section-head">
+      <p class="eyebrow">Hải Chi Rewards</p>
+      <h2>Tích điểm – ăn càng nhiều, quà càng to</h2>
+      <p class="sub">Mua đủ 6 bánh tặng 1 bánh · Mua đủ 5 ly tặng 1 ly (1+1) · Mỗi 10.000đ = 1 điểm</p>
+    </div>
+    <div id="loyalty"></div>
+  </section>
+
+  <!-- VIP -->
+  <section class="section" id="vip">
+    <div class="section-head">
+      <p class="eyebrow">Khách thân thiết &amp; VIP</p>
+      <h2>Càng gắn bó, ưu đãi càng lớn</h2>
+      <p class="sub">Hạng thành viên tự động nâng theo tổng điểm tích lũy và áp dụng giảm giá trực tiếp trong giỏ hàng.</p>
+    </div>
+    <div class="tiers" id="tiers"></div>
+    <div class="regulars">
+      <h3>💌 Lời tri ân khách lâu năm</h3>
+      <p>Cảm ơn hàng trăm gia đình, nhóm bạn và những vị khách đã đồng hành cùng Hải Chi từ ngày đầu. Khách hàng đạt hạng <b>Kim Cương</b> sẽ có tên trên “Bức tường thân thiết” tại quán và được mời thử bánh mới trước khi ra mắt.</p>
+    </div>
+  </section>
+
+  <!-- ĐÁNH GIÁ -->
+  <section class="section mint" id="danh-gia">
+    <div class="section-head">
+      <p class="eyebrow">Khách nói gì về Hải Chi</p>
+      <h2>Đánh giá &amp; phản hồi</h2>
+    </div>
+    <div class="reviews-wrap">
+      <div class="review-summary" id="reviewSummary"></div>
+      <div class="review-side">
+        <form class="card form" id="reviewForm">
+          <h3>Chia sẻ trải nghiệm của bạn</h3>
+          <label>Tên của bạn<input name="name" required maxlength="40" placeholder="VD: Ngọc Anh"></label>
+          <label>Món bạn đã dùng
+            <select name="item"><option value="">Chung về tiệm</option></select>
+          </label>
+          <div class="stars-input" id="starsInput" role="radiogroup" aria-label="Số sao">
+            <input type="hidden" name="stars" value="5">
+          </div>
+          <label>Nhận xét<textarea name="text" rows="3" required maxlength="400" placeholder="Bánh thế nào, không gian ra sao, nhân viên có dễ thương không?"></textarea></label>
+          <button class="btn" type="submit">Gửi đánh giá</button>
+        </form>
+      </div>
+      <div class="review-list" id="reviewList"></div>
+    </div>
+  </section>
+
+  <!-- HỎI ĐÁP + LIÊN HỆ -->
+  <section class="section" id="hoi-dap">
+    <div class="section-head">
+      <p class="eyebrow">Cần biết thêm?</p>
+      <h2>Hỏi đáp &amp; thông tin quán</h2>
+    </div>
+    <div class="faq-grid">
+      <div>
+        <input class="faq-search" id="faqSearch" type="search" placeholder="🔍 Tìm câu hỏi: địa chỉ, giờ mở cửa, giao hàng…">
+        <div id="faqList"></div>
+        <form class="card form ask" id="askForm">
+          <h3>Không thấy câu trả lời?</h3>
+          <label>Câu hỏi của bạn<textarea name="q" rows="2" required maxlength="300" placeholder="Tiệm mình có nhận làm bánh kem 3 tầng không ạ?"></textarea></label>
+          <label>SĐT hoặc email để tiệm phản hồi<input name="contact" required maxlength="60"></label>
+          <button class="btn" type="submit">Gửi câu hỏi</button>
+        </form>
+      </div>
+      <aside class="card contact">
+        <h3>📍 Ghé Hải Chi nhé</h3>
+        <div class="map" aria-hidden="true">
+          <svg viewBox="0 0 300 180"><rect width="300" height="180" fill="#e9f2ea"/><path d="M0 120H300M80 0V180M200 0V180M0 50H300" stroke="#fff" stroke-width="10"/><path d="M0 120H300" stroke="#f7d4cd" stroke-width="3"/><circle cx="140" cy="85" r="30" fill="#e4a39b" opacity=".25"/><path d="M140 100c-14-18-18-24-18-32a18 18 0 0 1 36 0c0 8-4 14-18 32z" fill="#d4857d"/><circle cx="140" cy="68" r="6" fill="#fff"/></svg>
+        </div>
+        <ul class="info">
+          <li><b>Địa chỉ</b><span id="cAddr"></span></li>
+          <li><b>Giờ mở cửa</b><span id="cHours"></span></li>
+          <li><b>Hotline / Zalo</b><span id="cPhone"></span></li>
+          <li><b>Email</b><span id="cMail"></span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="footer terrazzo">
+  <div>
+    <div class="brand light"><span class="brand-logo">🧁</span><span>Hải Chi <em>Bakery</em></span></div>
+    <p>Ngọt ngào từng lát bánh, ấm áp từng ly nước.</p>
+  </div>
+  <p class="copy">© <span id="year"></span> Hải Chi Bakery · Làm bằng tất cả tình yêu dành cho bánh ngọt 💗</p>
+</footer>
+
+<!-- Giỏ hàng -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Giỏ hàng">
+  <div class="drawer-head"><h3>Giỏ hàng của bạn</h3><button class="icon-btn" id="closeCart" aria-label="Đóng">✕</button></div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot"></div>
+</aside>
+
+<!-- Modal dùng chung -->
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true">
+  <div class="modal-box" id="modalBox"></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="js/data.js"></script>
+<script src="js/art.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
