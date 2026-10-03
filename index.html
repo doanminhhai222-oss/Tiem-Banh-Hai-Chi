@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hải Chi Bakery · Tiệm bánh ngọt ngào ấm cúng</title>
 <meta name="description" content="Hải Chi Bakery – tiệm bánh ngọt và thức uống ấm cúng. Đặt bánh, cà phê, trà sữa online, tích điểm đổi quà, ưu đãi khách VIP.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%81%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="bg-shop" aria-hidden="true"></div>
 
 <header class="nav" id="top">
-  <a class="brand" href="#top"><span class="brand-logo" aria-hidden="true">🧁</span><span>Hải Chi <em>Bakery</em></span></a>
+  <a class="brand" href="#top"><img class="brand-logo" src="assets/logo.jpg" alt="Logo Hải Chi Bakery"><span>Hải Chi <em>Bakery</em></span></a>
   <button class="burger" id="burger" aria-label="Mở menu" aria-expanded="false">☰</button>
   <nav id="menu">
     <a href="#gioi-thieu">Giới thiệu</a>
@@ -60,7 +61,7 @@
   <section class="section about" id="gioi-thieu">
     <div class="about-grid">
       <div class="about-card arch-top">
-        <div class="about-art" id="aboutArt"></div>
+        <img class="about-photo" src="assets/chi.jpg" alt="Chi, chủ tiệm Hải Chi Bakery" loading="lazy">
         <p class="sign script">— Chi, chủ tiệm</p>
       </div>
       <div class="about-text">
@@ -184,7 +185,7 @@
 
 <footer class="footer terrazzo">
   <div>
-    <div class="brand light"><span class="brand-logo">🧁</span><span>Hải Chi <em>Bakery</em></span></div>
+    <div class="brand light"><img class="brand-logo" src="assets/logo.jpg" alt=""><span>Hải Chi <em>Bakery</em></span></div>
     <p>Ngọt ngào từng lát bánh, ấm áp từng ly nước.</p>
   </div>
   <p class="copy">© <span id="year"></span> Hải Chi Bakery · Làm bằng tất cả tình yêu dành cho bánh ngọt 💗</p>

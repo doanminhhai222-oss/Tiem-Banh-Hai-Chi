@@ -57,7 +57,6 @@ function renderMenu() {
   $('#heroArt1').innerHTML = Art.render(prod('macaron').art);
   $('#heroArt2').innerHTML = Art.render(prod('sukem').art);
   $('#heroArt3').innerHTML = Art.render(prod('cheesecake').art);
-  $('#aboutArt').innerHTML = Art.render(prod('crepe').art);
   const sel = $('#reviewForm select[name=item]');
   PRODUCTS.forEach((p) => sel.insertAdjacentHTML('beforeend', `<option>${esc(p.name)}</option>`));
 }

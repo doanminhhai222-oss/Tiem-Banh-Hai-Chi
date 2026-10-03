@@ -7,7 +7,7 @@
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{position:relative;font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
@@ -27,8 +27,8 @@ input,select,textarea{font:inherit;color:inherit}
 .nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:20px;padding:12px 4vw;background:rgba(255,248,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--rose)}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:1.3rem}
 .brand em{font-family:var(--script);font-style:normal;color:var(--pink-d);font-weight:400}
-.brand-logo{display:grid;place-items:center;width:38px;height:38px;border-radius:50% 50% 12px 12px;background:var(--rose);font-size:1.2rem}
-.brand.light{color:#fff}.brand.light em{color:var(--rose)}.brand.light .brand-logo{background:rgba(255,255,255,.2)}
+.brand-logo{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--pink);background:var(--rose)}
+.brand.light{color:#fff}.brand.light em{color:var(--rose)}.brand.light .brand-logo{border-color:#fff}
 .nav nav{display:flex;gap:4px;margin-left:auto}
 .nav nav a{padding:8px 12px;border-radius:99px;font-size:.92rem;font-weight:500;transition:.2s}
 .nav nav a:hover{background:var(--rose)}
@@ -54,8 +54,8 @@ input,select,textarea{font:inherit;color:inherit}
 
 /* SECTIONS */
 .section{padding:84px 5vw;position:relative}
-.section.mint{background:var(--mint-l)}
-.section.pink{background-color:var(--rose)}
+.section.mint{background:rgba(230,241,232,.82)}
+.section.pink{background-color:rgba(248,220,214,.85)}
 .section-head{text-align:center;max-width:680px;margin:0 auto 44px}
 .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.76rem;font-weight:700;color:var(--pink-d);margin-bottom:10px}
 h1,h2,h3{font-family:var(--serif);line-height:1.2}
@@ -64,7 +64,7 @@ h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px}
 .script{font-family:var(--script);font-weight:400;color:var(--pink-d)}
 
 /* HERO */
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:70px 5vw 90px;background-color:var(--rose-l)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:70px 5vw 90px;background-color:rgba(253,238,234,.8)}
 .hero h1{font-size:clamp(2.2rem,5.4vw,3.8rem);margin:10px 0 18px}
 .hero-text>p{max-width:520px;color:var(--muted);font-size:1.05rem}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0}
@@ -83,8 +83,8 @@ h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px}
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center;max-width:1100px;margin:auto}
-.about-card{background:var(--mint);border:14px solid var(--pink);border-radius:999px 999px 24px 24px;padding:40px 30px 26px;text-align:center}
-.about-art{width:min(240px,100%);margin:0 auto}
+.about-card{background:var(--mint);border:14px solid var(--pink);border-radius:999px 999px 24px 24px;padding:14px 14px 18px;text-align:center;overflow:hidden}
+.about-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 62%;border-radius:999px 999px 14px 14px}
 .sign{font-size:1.2rem;margin-top:10px;color:#fff}
 .about-text p{margin-bottom:14px;color:#5e4a49}
 .about-text h2{font-size:clamp(1.6rem,3.4vw,2.3rem)}
@@ -280,3 +280,6 @@ details p{padding:0 20px 16px;font-size:.92rem;color:#5e4a49}
   #btnAccount{padding:6px 10px;font-size:.78rem}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ảnh mờ tiệm bánh làm nền toàn trang */
+.bg-shop{position:fixed;inset:0;z-index:-1;background:linear-gradient(rgba(255,248,243,.72),rgba(255,248,243,.72)),url('../assets/bakery-bg.jpg') center/cover no-repeat;filter:blur(5px);transform:scale(1.04)}
