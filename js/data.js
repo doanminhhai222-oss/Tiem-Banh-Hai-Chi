@@ -1,7 +1,7 @@
 /* ============ Dữ liệu tiệm Hải Chi Bakery — sửa tại đây ============ */
 const CONFIG = {
   name: 'Hải Chi Bakery',
-  address: '12 Đường Hoa Hồng, P. Bến Nghé, Quận 1, TP. Hồ Chí Minh', // TODO: thay địa chỉ thật
+  address: 'Phường Tân An, Thành phố Bắc Ninh',                        // TODO: bổ sung số nhà, tên đường
   phone: '0900 000 000',                                              // TODO: thay số điện thoại thật
   hours: '07:00 – 22:00, mở cửa cả tuần',
   email: 'hello@haichibakery.vn',
@@ -36,11 +36,11 @@ const PRODUCTS = [
     art: { k: 'puff', shell: '#f0c27a', cream: '#fffaf0', sugar: '#fff3d6' },
     flavor: 'Vani · Chocolate · Trà xanh',
     story: 'Choux à la crème sinh ra từ lò bánh của Pháp thế kỷ 16. Vỏ su mỏng giòn nhẹ, nhân kem custard bơm ngay khi khách gọi để vỏ không bị mềm — chọn vị truyền thống, phô mai hay chocolate.' },
-  { id: 'tiramisu', cat: 'banh', name: 'Tiramisu cà phê rum', price: 49000, tag: 'Nghiện',
+  { id: 'tiramisu', cat: 'banh', img: 'assets/menu/tiramisu.jpg', name: 'Tiramisu cà phê rum', price: 49000, tag: 'Nghiện',
     art: { k: 'tiramisu', cocoa: '#6b4132', cream: '#fff1dc', sponge: '#d9a566' },
     flavor: 'Đắng nhẹ · béo mịn · thơm rum',
     story: '“Tiramisu” trong tiếng Ý nghĩa là “kéo tôi lên” — vì cà phê và mascarpone khiến người ta tỉnh táo và hạnh phúc. Bánh quy ladyfinger thấm espresso đậm, phủ mascarpone đánh bông và rắc cacao.' },
-  { id: 'cheesecake', cat: 'banh', name: 'Cheesecake New York', price: 52000,
+  { id: 'cheesecake', cat: 'banh', img: 'assets/menu/cheesecake.jpg', name: 'Cheesecake New York', price: 52000,
     art: { k: 'slice', layers: ['#e9c58e', '#fff3d9', '#fff3d9'], top: '#ff9fb0', topping: 'berry' },
     flavor: 'Chua thanh · béo mát · đế quy giòn tan',
     story: 'Món tráng miệng gắn với New York từ đầu thế kỷ 20. Phiên bản nướng cách thủy của Hải Chi mịn như kem, đi cùng sốt dâu tươi chua nhẹ. Cũng có bản no-bake mát lạnh cho ngày nắng.' },
@@ -78,15 +78,15 @@ const PRODUCTS = [
     story: '“Panna cotta” nghĩa là “kem nấu chín” — món tráng miệng vùng Piedmont (Ý). Kem tươi và sữa tạo độ rung rinh mềm mượt, phủ sốt dâu tươi nấu tại tiệm.' },
 
   /* ---------------- THỨC UỐNG ---------------- */
-  { id: 'cfmuoi', cat: 'drink', name: 'Cà phê muối', price: 35000, tag: 'Hot trend',
+  { id: 'cfmuoi', cat: 'drink', img: 'assets/menu/cfmuoi.jpg', name: 'Cà phê muối', price: 35000, tag: 'Hot trend',
     art: { k: 'cup', layers: [['#4a2c20', .62], ['#f5ead8', .25]], foam: '#fff6e8', straw: '#e4a39b' },
     flavor: 'Đậm · béo · mặn nhẹ cuối vị',
     story: 'Khởi nguồn từ Huế, cà phê muối đi cùng lớp kem muối mặn mà béo phủ trên cà phê đen đậm. Vị mặn nhẹ làm nổi bật độ ngọt hậu — thức uống “gây nghiện” của giới trẻ.' },
-  { id: 'bacxiu', cat: 'drink', name: 'Bạc xỉu', price: 32000,
+  { id: 'bacxiu', cat: 'drink', img: 'assets/menu/bacxiu.jpg', name: 'Bạc xỉu', price: 32000,
     art: { k: 'cup', layers: [['#c79566', .45], ['#f6efe3', .45]], foam: null, straw: '#8fb9a0' },
     flavor: 'Nhiều sữa · ít cà phê · ngọt dịu',
     story: 'Cái tên bắt nguồn từ tiếng Quảng “bạc tẩy xỉu phé”, nghĩa là “nhiều sữa ít cà phê”. Món uống Sài Gòn dành cho người thích cà phê nhưng thương dạ dày.' },
-  { id: 'cfsua', cat: 'drink', name: 'Cà phê phin sữa đá', price: 29000,
+  { id: 'cfsua', cat: 'drink', img: 'assets/menu/cfsua.jpg', name: 'Cà phê phin sữa đá', price: 29000,
     art: { k: 'cup', layers: [['#3b2218', .50], ['#c79566', .30]], foam: null, straw: '#e4a39b' },
     flavor: 'Đậm đà · thơm rang xay · ngọt sữa đặc',
     story: 'Ly cà phê của người Sài Gòn mỗi sáng: pha phin nhỏ giọt, hòa sữa đặc, rót lên đá viên. Hạt Robusta Đắk Lắk rang vừa, đắng đậm mà không gắt.' },
