@@ -306,3 +306,12 @@ details p{padding:0 20px 16px;font-size:.92rem;color:#5e4a49}
 .eq i:nth-child(2){animation-delay:-.4s}.eq i:nth-child(3){animation-delay:-.8s}
 @keyframes eq{50%{height:20px}}
 .music-btn:focus-visible{outline:3px solid var(--mint-d);outline-offset:3px}
+
+/* màn chào để bật nhạc */
+.splash{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:20px;background:linear-gradient(rgba(255,248,243,.86),rgba(253,238,234,.9)),url('../assets/bakery-bg.jpg') center/cover;backdrop-filter:blur(6px);transition:opacity .6s}
+.splash.hide{opacity:0;pointer-events:none}
+.splash-box{max-width:420px;text-align:center;display:grid;gap:12px;justify-items:center}
+.splash-box img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:5px solid var(--pink);box-shadow:var(--shadow)}
+.splash-box h2{font-size:clamp(1.5rem,5vw,2rem);margin:6px 0 0}
+.splash-box p{color:var(--muted)}
+.splash-box small{color:var(--muted);font-size:.78rem}

@@ -100,17 +100,39 @@
     e.stopPropagation();
     if (playing) { setPref('off'); stop(); } else { setPref('on'); play(); }
   });
-  // trình duyệt chỉ cho phát sau khi người dùng tương tác: tự bật ở lần chạm đầu tiên (trừ khi đã tắt)
-  const first = (e) => {
-    if (e && e.target && e.target.closest && e.target.closest('#musicBtn')) return; // để nút tự xử lý
-    ['pointerdown', 'keydown', 'touchstart'].forEach((ev) => document.removeEventListener(ev, first, true));
-    if (pref() !== 'off' && !playing) play();
+
+  // Trình duyệt chặn tiếng khi chưa có tương tác. Thử phát ngay khi mở trang;
+  // nếu bị chặn thì hiện màn chào "Vào tiệm" để lấy cú chạm đầu tiên rồi phát nhạc.
+  let splash;
+  function hideSplash() { const s = splash; if (s) { splash = null; s.classList.add('hide'); setTimeout(() => s.remove(), 600); } }
+  function showSplash() {
+    if (splash || playing) return;
+    splash = document.createElement('div');
+    splash.className = 'splash';
+    splash.innerHTML = '<div class="splash-box"><img src="' + (document.querySelector('.brand-logo') || {}).src + '" alt=""><h2>Chào mừng đến <span class="script">Hải Chi Bakery</span></h2><p>Ngọt ngào từng lát bánh, ấm áp từng cốc trà</p><button class="btn" type="button">♪ Vào tiệm</button><small>Chạm để bật nhạc nền nhẹ nhàng</small></div>';
+    splash.addEventListener('click', () => { setPref('on'); play(); hideSplash(); });
+    document.body.appendChild(splash);
+    splash.querySelector('button').focus({ preventScroll: true });
+  }
+  async function autoStart() {
+    if (pref() === 'off') return;
+    if (!ctx) init();
+    await Promise.race([ctx.resume().catch(() => {}), new Promise((r) => setTimeout(r, 300))]);
+    if (ctx.state === 'running') play(); else showSplash();
+  }
+  // nếu khách chạm/gõ phím trước khi màn chào kịp hiện thì phát luôn
+  const gestures = ['click', 'pointerup', 'touchend', 'keydown'];
+  const onGesture = (e) => {
+    if (e.target && e.target.closest && e.target.closest('#musicBtn')) return;
+    if (pref() !== 'off' && !playing) { play(); hideSplash(); }
+    if (playing) gestures.forEach((g) => document.removeEventListener(g, onGesture, true));
   };
-  ['pointerdown', 'keydown', 'touchstart'].forEach((ev) => document.addEventListener(ev, first, true));
-  // tạm dừng khi chuyển tab
+  gestures.forEach((g) => document.addEventListener(g, onGesture, true));
+
   document.addEventListener('visibilitychange', () => {
     if (!ctx || !playing) return;
     if (document.hidden) ctx.suspend(); else ctx.resume();
   });
   ui();
+  autoStart();
 })();
