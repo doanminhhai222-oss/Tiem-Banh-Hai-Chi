@@ -110,7 +110,7 @@ const PRODUCTS = [
     art: { k: 'cup', layers: [['#b9642e', .55], ['#fff0d6', .28]], foam: '#fff0d6', straw: '#e4a39b' },
     flavor: 'Trà đậm · kem cheese mặn béo',
     story: '“Macchiato” trong tiếng Ý là “điểm vết” — như lớp kem phô mai đánh bông điểm trên bề mặt trà. Hồng trà đậm vị cân bằng độ béo của kem, uống từng ngụm lớn mới đã.' },
-  { id: 'traivai', cat: 'drink', name: 'Trà vải hoa hồng', price: 42000,
+  { id: 'traivai', cat: 'drink', img: 'assets/menu/traivai.jpg', name: 'Trà vải hoa hồng', price: 42000,
     art: { k: 'cup', layers: [['#f7bfc8', .65]], foam: null, fruit: '#fff3f0', straw: '#bcd8c3' },
     flavor: 'Thơm hoa hồng · ngọt vải · thanh mát',
     story: 'Thức uống mang màu của tiệm: hồng phớt dịu dàng. Vải ngâm nguyên trái cùng cánh hoa hồng sấy khô, trà xanh ủ nhẹ — hợp với bánh macaron và cheesecake.' },
